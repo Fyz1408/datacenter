@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ChakraProvider } from '@chakra-ui/react/dist/chakra-provider';
 import {BrowserRouter} from "react-router-dom";
+import {ChakraProvider, extendBaseTheme, ThemeConfig} from '@chakra-ui/react';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const config = extendBaseTheme({
+  initialColorMode: 'dark',
+  useSystemColorMode: false,
+})
+
 root.render(
   <ChakraProvider>
     <React.StrictMode>
