@@ -1,6 +1,16 @@
 import {Flex, Heading, useColorModeValue} from "@chakra-ui/react";
+import {useGetTemperatureQuery} from "../../api/apiSlice";
 
 function Dashboard() {
+  const {
+    data: temperatureData,
+    error: temperatureError,
+    isError: temperatureIsError,
+    isLoading: temperatureIsLoading,
+    refetch: refetchTemperature
+  } = useGetTemperatureQuery(15)
+
+  console.log(temperatureData)
 
   return (
     <>
@@ -9,11 +19,12 @@ function Dashboard() {
         justifyContent='center'
         alignItems='center'
         flexDir='column'
-        backgroundColor={useColorModeValue('white', 'Black')}
       >
         <Heading mb={3}>
           Dashboard
         </Heading>
+
+
 
       </Flex>
     </>

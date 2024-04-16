@@ -11,9 +11,8 @@ function App() {
     <main>
       <Navbar/>
       <Routes>
-        <Route path='/*' element={<Landing/>}/>
+        <Route path='/*' element={<Dashboard/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
       </Routes>
     </main>
   );
